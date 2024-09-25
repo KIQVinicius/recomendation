@@ -22,7 +22,7 @@ def remover_outliers_iqr(df, coluna_alvo):
     df_sem_outliers = df[(df[coluna_alvo] >= limite_inferior) & (df[coluna_alvo] <= limite_superior)]
     return df_sem_outliers
 
-df = pd.read_csv('/content/credit_features_formatado.csv')
+df = pd.read_csv('credit_features_formatado.csv')
 
 df.head()
 
