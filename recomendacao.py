@@ -82,6 +82,7 @@ st.title("Sistema de Recomendação de Investimentos")
 df = pd.read_csv('credit_features_formatado.csv')
 df = df.drop(columns=['Unnamed: 0'])
 df = remover_outliers_iqr(df, 'RENDA_PESSOAL_MENSAL')
+df['CEP_RESIDENCIAL_3'] = pd.to_numeric(df['CEP_RESIDENCIAL_3'], errors='coerce')
 
 # Aplicar a clusterização
 df_clustered = cluster_investors(df)
